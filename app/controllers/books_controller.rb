@@ -1,4 +1,7 @@
 class BooksController < ApplicationController
+
+  before_action :set_book, only: [ :show, :edit, :update, :destroy ]
+
   def index
 
     @available_at =Time.now
@@ -10,11 +13,16 @@ class BooksController < ApplicationController
     @book = Book.new
   end
 
+
   def create
     @book = Book.new(book_params)
-    @book.save
-    redirect_to @book
+    if @book.save
+      redirect_to @book, notice: "#{@book.title} was created!"
+    else
+      render :new
+    end
   end
+
 
   def show
     @book = Book.find(params[:id])
@@ -25,15 +33,27 @@ class BooksController < ApplicationController
   end
 
   def update
-    @book = Book.find(params[:id])
-    @book.update(books_params)
-    redirect to @book
+    if @book.update(book_params)
+     redirect_to @book, notice: "#{@book.title} was updated!"
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    #@book = Book.find(params[:id])
+    @book.destroy
+    redirect_to books_url
   end
 
   private
 
   def book_params
     params.require(:book).permit(:title, :author, :pages, :price)
+  end
+
+  def set_book
+    @book = Book.find(params[:id])
   end
 
 end

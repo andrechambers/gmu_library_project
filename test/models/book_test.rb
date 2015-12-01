@@ -26,7 +26,7 @@ class BookTest < ActiveSupport::TestCase
 
   test 'persistence works properly' do
     created_book = Book.create(title: 'Snow Crash', author: 'Neal Stephenson', pages: 440, price: 12.99)
-    found_book = Book.find created_book.id
+    dfound_book = Book.find created_book.id
     assert_not_nil found_book
     assert_equal 'Snow Crash', found_book.title
     assert_equal 'Neal Stephenson', found_book.author
