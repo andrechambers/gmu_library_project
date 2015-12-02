@@ -5,8 +5,7 @@ class BooksController < ApplicationController
   def index
 
     @available_at =Time.now
-    @books = Book.all
-    # ["Atlas Shrugged", "Ender's Game", "Hamlet", "The Hobbit"]
+    @books = Book.order(:title).page(params[:page])
   end
 
   def new
