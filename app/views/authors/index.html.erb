@@ -1,0 +1,10 @@
+<h1>Authors</h1>
+<div>
+  <% @authors.each do |author| %>
+    <p>
+      <img src='<%=author.image_url %>'/>
+      <%= link_to(author.name, author) %>
+    </p>
+  <% end %>
+</div>
+<%= paginate @authors %>

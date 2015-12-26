@@ -1,10 +1,12 @@
 <h1>Books</h1>
 <p>Available as of <%= formatted_time(@available_at) %> </p>
-<ol>
+<div>
   <% @books.each do |book| %>
-    <li>
+    <p>
+      <img src='<%=book.image_cover_url %>'/>
       <%= link_to(book.title, book) %>
-      by <%= book.author %>
-    </li>
+      by <%= book.author.name %></br>
+    </p>
   <% end %>
-</ol>
+</div>
+<%= paginate @books %>

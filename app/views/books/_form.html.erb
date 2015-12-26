@@ -1,9 +1,14 @@
 <%= form_for(@book) do |f| %>
   <%= render 'shared/validation_errors', object: @book %>
   <%= f.label :title %> <%= f.text_field :title, autofocus: true %><br />
-  <%= f.label :author %> <%= f.text_field :author %><br />
+  <%= f.label :author %> <%= f.collection_select(:author_id, Author.all, :id, :name) %><br />
+  <%= f.label :isbn %> <%= f.text_field :isbn %><br />
+  <%= f.label :abstract %> <%= f.text_area :abstract, cols: 50, rows: 15 %><br />
   <%= f.label :pages %> <%= f.text_field :pages %><br />
-  <%= f.label :price %> <%= f.text_field :price %><br />
+  <%= f.label :total_in_library %> <%= f.text_field :total_in_library %><br />
+  <%= f.label :genre %> <%= f.select :genre, Book::GENRE, {prompt: "Pick one"} %></br>
+  <%= f.label :published_on %> <%= f.text_field :published_on %><br />
+    <%= f.label :image_cover_url %> <%= f.text_field :image_cover_url %><br />
   <p>
     <%= f.submit %>
     <%= link_to 'Cancel', books_path %>

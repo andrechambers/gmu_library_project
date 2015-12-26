@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
+
   resources :books
+  resources :users
+  get 'admin' => 'admin#index'
+  controller :sessions do
+    get 'login' => :new
+    post 'login' => :create
+    delete 'logout' => :destroy
+  end
+
+  resources :authors
   root 'books#index'
   #get "/books" => "books#index", as: 'books'
   #get "books/new" => "books#new", as: 'new_book'

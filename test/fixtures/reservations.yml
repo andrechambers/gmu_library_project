@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  reserved_on: MyString
+  date: MyString
+  due_on: MyString
+  date: MyString
+  user_id: MyString
+  integer: MyString
+  book_id: MyString
+  integer: MyString
+
+two:
+  reserved_on: MyString
+  date: MyString
+  due_on: MyString
+  date: MyString
+  user_id: MyString
+  integer: MyString
+  book_id: MyString
+  integer: MyString

@@ -11,15 +11,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151111030044) do
+ActiveRecord::Schema.define(version: 20151226041807) do
+
+  create_table "authors", force: :cascade do |t|
+    t.string   "name"
+    t.string   "string"
+    t.string   "dob"
+    t.string   "date"
+    t.string   "nationality"
+    t.string   "awards"
+    t.string   "biography"
+    t.string   "image_url"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "books", force: :cascade do |t|
+    t.string   "isbn"
+    t.string   "string"
     t.string   "title"
-    t.string   "author"
-    t.integer  "pages"
-    t.decimal  "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "author_id"
+    t.string   "integer"
+    t.string   "genre"
+    t.string   "abstract"
+    t.string   "text"
+    t.string   "pages"
+    t.string   "image_cover_url"
+    t.string   "published_on"
+    t.string   "date"
+    t.string   "total_in_library"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "books", ["author_id"], name: "index_books_on_author_id"
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "string"
+    t.string   "user_id"
+    t.string   "password_digest"
+    t.string   "admin"
+    t.string   "boolean"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end

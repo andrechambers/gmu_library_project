@@ -1,0 +1,23 @@
+<% content_for :name, @author.name %>
+<article class="book">
+  <header>
+    <h2><%= @author.name %></h2>
+  </header>
+  <p><img src='<%= @author.image_url %>'/>
+    <%= @author.biography %>
+  </p>
+  <h3>Details</h3>
+
+  <p><label>Date of Birth:</label> <%= number_with_delimiter(@author.dob) %></p>
+  <p><label>Nationality:</label> <%= number_with_delimiter(@author.nationality) %></p>
+  <p><label>Awards:</label> <%= number_with_delimiter(@author.awards) %></p>
+</article>
+
+<div>
+  <% @author.books.each do |book| %>
+    <p>
+      <img src='<%=book.image_cover_url %>'/>
+      <%= link_to(book.title, book) %></br>
+    </p>
+  <% end %>
+</div>

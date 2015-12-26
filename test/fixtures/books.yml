@@ -1,25 +1,43 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  isbn: MyString
+  string: MyString
   title: MyString
-  author: MyString
-  pages: 1
-  price: 9.99
+  string: MyString
+  author_id: MyString
+  integer: MyString
+  genre: MyString
+  string: MyString
+  abstract: MyString
+  text: MyString
+  pages: MyString
+  integer: MyString
+  image_cover_url: MyString
+  string: MyString
+  published_on: MyString
+  date: MyString
+  total_in_library: MyString
+  integer: MyString
+  author_id: 
 
 two:
+  isbn: MyString
+  string: MyString
   title: MyString
-  author: MyString
-  pages: 1
-  price: 9.99
-
-hobbit:
-  title: 'The Hobbit'
-  author: 'Tolkien'
-  pages: 384
-  price: 22.68
-
-ender:
-  title: "Ender's Game"
-  author: 'Orson Scott Card'
-  pages: 352
-  price: 4.83
+  string: MyString
+  author_id: MyString
+  integer: MyString
+  genre: MyString
+  string: MyString
+  abstract: MyString
+  text: MyString
+  pages: MyString
+  integer: MyString
+  image_cover_url: MyString
+  string: MyString
+  published_on: MyString
+  date: MyString
+  total_in_library: MyString
+  integer: MyString
+  author_id: 
